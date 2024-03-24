@@ -1,0 +1,77 @@
+<div class="container card-box mt-4 ">
+  <h1 *ngIf="one==true">Add New Task</h1>
+  <h1 *ngIf="one==false">Edit Task</h1>
+  <div class="container">
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <form [formGroup]="AddForm" (ngSubmit)="SubmitForm()">
+          <div class="row ">
+            <!-- ....................input to enter title.................. -->
+            <div class="form-group  mr">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" id="title" name="title" formControlName="title"
+                placeholder="Enter task Title">
+              <div id="title" class="text text-danger"
+                *ngIf="AddForm.controls.title.dirty && AddForm.controls.title.invalid">
+                <span *ngIf="AddForm.controls.title.errors.required">Field Required</span>
+                <span *ngIf="AddForm.controls.title.errors.pattern">Title can have only
+                  alphabets</span>
+              </div>
+            </div>
+            <!-- .................input for discription........... -->
+            <div class="form-group mr ">
+              <label for="discription">Description</label>
+              <textarea type="text" class="form-control" id="discription" name="discription"
+                formControlName="discription" placeholder="Enter task Description"></textarea>
+              <div id="discription" class="text text-danger"
+                *ngIf="AddForm.controls.discription.dirty && AddForm.controls.discription.invalid">
+                <span *ngIf="AddForm.controls.discription.errors.required">Field Required</span>
+              </div>
+            </div>
+          </div>
+          <!-- ....................input for enter status....................... -->
+          <div>
+            <div class="form-group mr">
+              <label for="status">Status</label><br>
+              <div>
+                <input type="radio" formControlName="status" value="completed">Completed
+                <input type="radio" formControlName="status" value="pending">Pending
+              </div>
+              <div id="status" class="text text-danger"
+                *ngIf="AddForm.controls.status.dirty && AddForm.controls.status.invalid">
+                <span *ngIf="AddForm.controls.status.errors.required">Field Required</span>
+              </div>
+            </div>
+          </div>
+          <!-- ....................input for Due Date....................... -->
+          <div>
+            <div class="form-group mr">
+              <label for="due">Due Date</label>
+              <input type="date" class="form-control" id="due" name="due" formControlName="due"
+                placeholder="Enter Due Date">
+              <div id="due" class="text text-danger" *ngIf="AddForm.controls.due.dirty && AddForm.controls.due.invalid">
+                <span *ngIf="AddForm.controls.due.errors.required ">Field Required</span>
+                <span *ngIf="AddForm.controls.due.errors.dateError">Due date can't be a
+                  past date</span>
+              </div>
+            </div>
+          </div>
+          <!-- ...............................buttons.................. -->
+          <div class="row mt-4 pd-4 d-flex  ">
+            <div class="form-group  ">
+              <button type="submit" class="btn btn-primary " [disabled]="AddForm.invalid"
+                *ngIf="one==true">submit</button>
+              <button type="submit" class="btn btn-primary " *ngIf="one==false">Done</button>
+              <button type="reset" class="btn btn-primary btns">Reset</button>
+            </div>
+            <div>
+              <div *ngIf="errorMessage" class="text text-danger" id="errorMessage">
+                <!-- ..Error Message ..-->{{errorMessage}}
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+{
+  "tasklist": [
+    {
+      "id": 1,
+      "title": "Prepare Quarterly Report",
+      "discription": "Compile financial data, analyze trends, and create a comprehensive report summarizing company performance for the past quarter. Include visual representations of data for clarity.\n ",
+      "status": "pending",
+      "due": "2027-04-05"
+    },
+    {
+      "id": 2,
+      "title": "Website Redesign",
+      "discription": "Collaborate with the design team to revamp the company website. Update the layout, graphics, and content to improve user experience and reflect brand identity. Ensure responsiveness across all devices.",
+      "status": "pending",
+      "due": "2025-05-06"
+    },
+    {
+      "id": 3,
+      "title": "Client Meeting Preparation",
+      "discription": "Research client background and preferences, gather relevant materials, and create a presentation outlining proposed strategies and solutions. Coordinate with team members to ensure all aspects of the client's needs are addressed.\n ",
+      "status": "completed",
+      "due": "2024-06-06"
+    },
+    {
+      "id": 4,
+      "title": "Employee Onboarding",
+      "discription": "Facilitate the onboarding process for new employees, including paperwork completion, orientation sessions, and setting up necessary accounts and equipment. Provide support and guidance to ensure a smooth transition into the company.",
+      "status": "completed",
+      "due": "2024-05-06"
+    },
+    {
+      "id": 5,
+      "title": "Marketing Campaign Launch",
+      "discription": "Coordinate with the marketing team to finalize campaign elements including email blasts, social media posts, and promotional materials. Set up tracking mechanisms to monitor campaign performance and adjust strategies as needed.\n ",
+      "status": "pending",
+      "due": "2024-04-04"
+    },
+    {
+      "title": "Installation and Configuration",
+      "discription": "Setting up new hardware, software, and configuring them according to organizational requirements.Regularly applications, and infrastructure to ensure optimal performance and security. ",
+      "status": "completed",
+      "due": "2024-06-07",
+      "id": 6
+    }
+  ]
+}

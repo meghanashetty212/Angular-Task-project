@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h1 class="text-center">Task List</h1>
+  <div class="row m-4 offset-md-2">
+    <table class="table table-bordered">
+      <thead class="bg-info">
+        <tr>
+          <th class="bg-info">title</th>
+          <th class="bg-info">due date</th>
+          <th class="bg-info">Status</th>
+          <th class="bg-info"></th>
+          <th class="bg-info"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasklistArray">
+          <td> {{task.title}} </td>
+          <td>{{task.due}}</td>
+          <td>{{ task.status}}</td>
+          <td>
+            <button type="button" id="button1" routerLink="/edit/{{task.id}}" (click)="getTask(task.id)"
+              class="btn btn-primary ">edit</button> <!-- redirected to form page to edit data of selected ID-->
+          </td>
+          <td>
+            <button type="button" (click)="deleteTask(task.id)" class="btn btn-danger btns">delete</button>
+            <!-- Delete the data of selected ID-->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

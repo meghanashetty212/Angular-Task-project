@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <div *ngIf="selectedStatus">
+    <h5>Status Updated !!</h5>
+    <div>
+      <p class="alert alert-success">Task Status: {{statusToShow}}</p>
+    </div>
+  </div>
+
+  <div class="row d-flex" *ngIf="tasklistArray?.length">
+    <div class="col-lg-4 mt-3" *ngFor="let  task of tasklistArray"> <!--loop through each value of tasklistArray-->
+      <div class="card shadow text-dark mt-2 ">
+        <div class="card-header">
+          <h4 class="text text-center">{{task.title}} </h4>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"> {{task.discription}}</p>
+          <p class="card-text">{{task.dueDate}}</p>
+          <div class="card-footer" *ngIf="task.id">
+            <h5 class="card-text">Status:&nbsp;{{task.status}} </h5> <!-- to fetch the status of task.................-->
+
+            <input type="radio" name="status" [value]="'completed'" [checked]="task.status === 'completed'"
+              (change)="onStatusChange(task.id, 'completed')">&nbsp;Completed
+            <input type="radio" name="status" [value]="'pending'" [checked]="task.status === 'pending'"
+              (change)="onStatusChange(task.id, 'pending')">&nbsp;Pending
+
+          </div>
+          <!--Buttons to fetch the status and Details button to redirect to details  -->
+          <div class="form-check-inline mt-2">
+            <button class="btn btn-primary " (click)="sendStatus(task)">Update Status</button>
+            <button type="button" class="btn btn-primary btns" [routerLink]="['/details']">Details</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

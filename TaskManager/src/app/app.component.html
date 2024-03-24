@@ -1,0 +1,6 @@
+<div class="navbar nav-expand-md bg-info">
+  <h1 routerLink="home">Task Manager</h1> <!--here on clicking Task Manager it navigates back to home page-->
+  <button class="btn btn-success btn-lg m-4 m-4 add" (click)="newTask()" [routerLink]="['/task']">Add Task</button> <!--button to navigate to add new task form-->
+</div>
+
+<router-outlet></router-outlet>
